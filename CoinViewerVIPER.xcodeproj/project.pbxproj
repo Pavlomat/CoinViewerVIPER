@@ -9,21 +9,57 @@
 /* Begin PBXBuildFile section */
 		BA3A6DAA297ECEFF00424994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DA9297ECEFF00424994 /* AppDelegate.swift */; };
 		BA3A6DAC297ECEFF00424994 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DAB297ECEFF00424994 /* SceneDelegate.swift */; };
-		BA3A6DAE297ECEFF00424994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DAD297ECEFF00424994 /* ViewController.swift */; };
-		BA3A6DB1297ECEFF00424994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3A6DAF297ECEFF00424994 /* Main.storyboard */; };
 		BA3A6DB3297ECF0000424994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3A6DB2297ECF0000424994 /* Assets.xcassets */; };
 		BA3A6DB6297ECF0000424994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3A6DB4297ECF0000424994 /* LaunchScreen.storyboard */; };
+		BA3A6DC4297ED01900424994 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DC3297ED01900424994 /* APIManager.swift */; };
+		BA3A6DC6297ED03300424994 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DC5297ED03300424994 /* Extensions.swift */; };
+		BA3A6DC8297ED04D00424994 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DC7297ED04D00424994 /* Coin.swift */; };
+		BA3A6DCD297ED0B300424994 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DCC297ED0B300424994 /* AuthViewController.swift */; };
+		BA3A6DCF297ED0BC00424994 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DCE297ED0BC00424994 /* AuthProtocols.swift */; };
+		BA3A6DD1297ED0C300424994 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DD0297ED0C300424994 /* AuthPresenter.swift */; };
+		BA3A6DD3297ED0CC00424994 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DD2297ED0CC00424994 /* AuthInteractor.swift */; };
+		BA3A6DD5297ED0D500424994 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DD4297ED0D500424994 /* AuthRouter.swift */; };
+		BA3A6DD7297ED12500424994 /* CoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DD6297ED12500424994 /* CoinsViewController.swift */; };
+		BA3A6DD9297ED12D00424994 /* CoinsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DD8297ED12D00424994 /* CoinsProtocols.swift */; };
+		BA3A6DDB297ED13500424994 /* CoinsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DDA297ED13500424994 /* CoinsPresenter.swift */; };
+		BA3A6DDD297ED13E00424994 /* CoinsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DDC297ED13E00424994 /* CoinsInteractor.swift */; };
+		BA3A6DDF297ED14600424994 /* CoinsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DDE297ED14600424994 /* CoinsRouter.swift */; };
+		BA3A6DE1297ED1A900424994 /* DetailCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DE0297ED1A900424994 /* DetailCoinViewController.swift */; };
+		BA3A6DE3297ED1B400424994 /* CoinProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DE2297ED1B400424994 /* CoinProtocols.swift */; };
+		BA3A6DE5297ED1BC00424994 /* CoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DE4297ED1BC00424994 /* CoinPresenter.swift */; };
+		BA3A6DE7297ED1C900424994 /* CoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DE6297ED1C900424994 /* CoinInteractor.swift */; };
+		BA3A6DE9297ED1D300424994 /* CoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DE8297ED1D300424994 /* CoinRouter.swift */; };
+		BA3A6DEB297ED23000424994 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DEA297ED23000424994 /* TableViewCell.swift */; };
+		BA3A6DED297ED28500424994 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DEC297ED28500424994 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BA3A6DA6297ECEFF00424994 /* CoinViewerVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinViewerVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3A6DA9297ECEFF00424994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA3A6DAB297ECEFF00424994 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA3A6DAD297ECEFF00424994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BA3A6DB0297ECEFF00424994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA3A6DB2297ECF0000424994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA3A6DB5297ECF0000424994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA3A6DB7297ECF0000424994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA3A6DC3297ED01900424994 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BA3A6DC5297ED03300424994 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BA3A6DC7297ED04D00424994 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		BA3A6DCC297ED0B300424994 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		BA3A6DCE297ED0BC00424994 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
+		BA3A6DD0297ED0C300424994 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		BA3A6DD2297ED0CC00424994 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		BA3A6DD4297ED0D500424994 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		BA3A6DD6297ED12500424994 /* CoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewController.swift; sourceTree = "<group>"; };
+		BA3A6DD8297ED12D00424994 /* CoinsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsProtocols.swift; sourceTree = "<group>"; };
+		BA3A6DDA297ED13500424994 /* CoinsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsPresenter.swift; sourceTree = "<group>"; };
+		BA3A6DDC297ED13E00424994 /* CoinsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsInteractor.swift; sourceTree = "<group>"; };
+		BA3A6DDE297ED14600424994 /* CoinsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsRouter.swift; sourceTree = "<group>"; };
+		BA3A6DE0297ED1A900424994 /* DetailCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoinViewController.swift; sourceTree = "<group>"; };
+		BA3A6DE2297ED1B400424994 /* CoinProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinProtocols.swift; sourceTree = "<group>"; };
+		BA3A6DE4297ED1BC00424994 /* CoinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPresenter.swift; sourceTree = "<group>"; };
+		BA3A6DE6297ED1C900424994 /* CoinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinInteractor.swift; sourceTree = "<group>"; };
+		BA3A6DE8297ED1D300424994 /* CoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRouter.swift; sourceTree = "<group>"; };
+		BA3A6DEA297ED23000424994 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BA3A6DEC297ED28500424994 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +92,105 @@
 		BA3A6DA8297ECEFF00424994 /* CoinViewerVIPER */ = {
 			isa = PBXGroup;
 			children = (
-				BA3A6DA9297ECEFF00424994 /* AppDelegate.swift */,
-				BA3A6DAB297ECEFF00424994 /* SceneDelegate.swift */,
-				BA3A6DAD297ECEFF00424994 /* ViewController.swift */,
-				BA3A6DAF297ECEFF00424994 /* Main.storyboard */,
+				BA3A6DBF297ECFD700424994 /* Common */,
+				BA3A6DBE297ECFCA00424994 /* Modules */,
+				BA3A6DBD297ECFB600424994 /* Delegates */,
 				BA3A6DB2297ECF0000424994 /* Assets.xcassets */,
 				BA3A6DB4297ECF0000424994 /* LaunchScreen.storyboard */,
 				BA3A6DB7297ECF0000424994 /* Info.plist */,
 			);
 			path = CoinViewerVIPER;
+			sourceTree = "<group>";
+		};
+		BA3A6DBD297ECFB600424994 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DA9297ECEFF00424994 /* AppDelegate.swift */,
+				BA3A6DAB297ECEFF00424994 /* SceneDelegate.swift */,
+				BA3A6DEC297ED28500424994 /* BaseViewController.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		BA3A6DBE297ECFCA00424994 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DC9297ED06600424994 /* AuthVC */,
+				BA3A6DCA297ED07200424994 /* CoinsVC */,
+				BA3A6DCB297ED08100424994 /* DetailCoinVC */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BA3A6DBF297ECFD700424994 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DC2297ECFFB00424994 /* Entities */,
+				BA3A6DC1297ECFEF00424994 /* Extensions */,
+				BA3A6DC0297ECFE800424994 /* Managers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BA3A6DC0297ECFE800424994 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DC3297ED01900424994 /* APIManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		BA3A6DC1297ECFEF00424994 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DC5297ED03300424994 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BA3A6DC2297ECFFB00424994 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DC7297ED04D00424994 /* Coin.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BA3A6DC9297ED06600424994 /* AuthVC */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DCC297ED0B300424994 /* AuthViewController.swift */,
+				BA3A6DCE297ED0BC00424994 /* AuthProtocols.swift */,
+				BA3A6DD0297ED0C300424994 /* AuthPresenter.swift */,
+				BA3A6DD2297ED0CC00424994 /* AuthInteractor.swift */,
+				BA3A6DD4297ED0D500424994 /* AuthRouter.swift */,
+			);
+			path = AuthVC;
+			sourceTree = "<group>";
+		};
+		BA3A6DCA297ED07200424994 /* CoinsVC */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DD6297ED12500424994 /* CoinsViewController.swift */,
+				BA3A6DD8297ED12D00424994 /* CoinsProtocols.swift */,
+				BA3A6DDA297ED13500424994 /* CoinsPresenter.swift */,
+				BA3A6DDC297ED13E00424994 /* CoinsInteractor.swift */,
+				BA3A6DDE297ED14600424994 /* CoinsRouter.swift */,
+				BA3A6DEA297ED23000424994 /* TableViewCell.swift */,
+			);
+			path = CoinsVC;
+			sourceTree = "<group>";
+		};
+		BA3A6DCB297ED08100424994 /* DetailCoinVC */ = {
+			isa = PBXGroup;
+			children = (
+				BA3A6DE0297ED1A900424994 /* DetailCoinViewController.swift */,
+				BA3A6DE2297ED1B400424994 /* CoinProtocols.swift */,
+				BA3A6DE4297ED1BC00424994 /* CoinPresenter.swift */,
+				BA3A6DE6297ED1C900424994 /* CoinInteractor.swift */,
+				BA3A6DE8297ED1D300424994 /* CoinRouter.swift */,
+			);
+			path = DetailCoinVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +253,6 @@
 			files = (
 				BA3A6DB6297ECF0000424994 /* LaunchScreen.storyboard in Resources */,
 				BA3A6DB3297ECF0000424994 /* Assets.xcassets in Resources */,
-				BA3A6DB1297ECEFF00424994 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +263,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3A6DAE297ECEFF00424994 /* ViewController.swift in Sources */,
+				BA3A6DD1297ED0C300424994 /* AuthPresenter.swift in Sources */,
+				BA3A6DE3297ED1B400424994 /* CoinProtocols.swift in Sources */,
+				BA3A6DC4297ED01900424994 /* APIManager.swift in Sources */,
+				BA3A6DD5297ED0D500424994 /* AuthRouter.swift in Sources */,
 				BA3A6DAA297ECEFF00424994 /* AppDelegate.swift in Sources */,
+				BA3A6DE1297ED1A900424994 /* DetailCoinViewController.swift in Sources */,
 				BA3A6DAC297ECEFF00424994 /* SceneDelegate.swift in Sources */,
+				BA3A6DC8297ED04D00424994 /* Coin.swift in Sources */,
+				BA3A6DDB297ED13500424994 /* CoinsPresenter.swift in Sources */,
+				BA3A6DDD297ED13E00424994 /* CoinsInteractor.swift in Sources */,
+				BA3A6DD3297ED0CC00424994 /* AuthInteractor.swift in Sources */,
+				BA3A6DDF297ED14600424994 /* CoinsRouter.swift in Sources */,
+				BA3A6DEB297ED23000424994 /* TableViewCell.swift in Sources */,
+				BA3A6DED297ED28500424994 /* BaseViewController.swift in Sources */,
+				BA3A6DD7297ED12500424994 /* CoinsViewController.swift in Sources */,
+				BA3A6DD9297ED12D00424994 /* CoinsProtocols.swift in Sources */,
+				BA3A6DCD297ED0B300424994 /* AuthViewController.swift in Sources */,
+				BA3A6DE5297ED1BC00424994 /* CoinPresenter.swift in Sources */,
+				BA3A6DCF297ED0BC00424994 /* AuthProtocols.swift in Sources */,
+				BA3A6DE9297ED1D300424994 /* CoinRouter.swift in Sources */,
+				BA3A6DE7297ED1C900424994 /* CoinInteractor.swift in Sources */,
+				BA3A6DC6297ED03300424994 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BA3A6DAF297ECEFF00424994 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA3A6DB0297ECEFF00424994 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BA3A6DB4297ECF0000424994 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +428,7 @@
 				INFOPLIST_FILE = CoinViewerVIPER/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +456,7 @@
 				INFOPLIST_FILE = CoinViewerVIPER/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
