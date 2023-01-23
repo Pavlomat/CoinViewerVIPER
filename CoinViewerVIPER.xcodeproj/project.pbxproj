@@ -92,9 +92,9 @@
 		BA3A6DA8297ECEFF00424994 /* CoinViewerVIPER */ = {
 			isa = PBXGroup;
 			children = (
+				BA3A6DBD297ECFB600424994 /* Delegates */,
 				BA3A6DBF297ECFD700424994 /* Common */,
 				BA3A6DBE297ECFCA00424994 /* Modules */,
-				BA3A6DBD297ECFB600424994 /* Delegates */,
 				BA3A6DB2297ECF0000424994 /* Assets.xcassets */,
 				BA3A6DB4297ECF0000424994 /* LaunchScreen.storyboard */,
 				BA3A6DB7297ECF0000424994 /* Info.plist */,
@@ -431,6 +431,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +460,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

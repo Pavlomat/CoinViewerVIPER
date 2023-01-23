@@ -16,7 +16,7 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
     var coins: [List]?
     
     func loadCoins() {
-        
+          
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
             ApiManager.shared.getDataFromNet { [weak self] result in

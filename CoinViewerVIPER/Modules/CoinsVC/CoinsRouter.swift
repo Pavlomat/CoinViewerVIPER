@@ -17,8 +17,6 @@ class CoinsRouter: PresenterToRouterCoinsProtocol {
             let viewController = view as! CoinsViewController
             viewController.navigationController?.pushViewController(coinDetailViewController, animated: true)
         }
-       
-        
     }
     
     // MARK: Static methods
@@ -37,6 +35,5 @@ class CoinsRouter: PresenterToRouterCoinsProtocol {
         
         return viewController
     }
-    
 }
 
