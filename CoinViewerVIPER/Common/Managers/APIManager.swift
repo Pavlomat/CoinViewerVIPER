@@ -9,7 +9,7 @@ import Foundation
 
 class ApiManager {
     
-    static let shared = ApiManager()
+//    static let shared = ApiManager()
     
     let urlString = "https://api.openweathermap.org/data/2.5/forecast?lat=48.8534&lon=2.3488&appid=208febed9f28a657758f1654191cc5e7"
     

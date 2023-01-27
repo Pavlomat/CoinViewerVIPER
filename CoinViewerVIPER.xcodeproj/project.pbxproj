@@ -31,6 +31,8 @@
 		BA3A6DE9297ED1D300424994 /* CoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DE8297ED1D300424994 /* CoinRouter.swift */; };
 		BA3A6DEB297ED23000424994 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DEA297ED23000424994 /* TableViewCell.swift */; };
 		BA3A6DED297ED28500424994 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DEC297ED28500424994 /* BaseViewController.swift */; };
+		BA42704D2983DCCE00CD5401 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA42704C2983DCCE00CD5401 /* NetworkService.swift */; };
+		BA42704F2983DEB700CD5401 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		BA3A6DE8297ED1D300424994 /* CoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRouter.swift; sourceTree = "<group>"; };
 		BA3A6DEA297ED23000424994 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BA3A6DEC297ED28500424994 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BA42704C2983DCCE00CD5401 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				BA3A6DC3297ED01900424994 /* APIManager.swift */,
+				BA42704C2983DCCE00CD5401 /* NetworkService.swift */,
+				BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -263,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA42704F2983DEB700CD5401 /* NetworkDataFetcher.swift in Sources */,
 				BA3A6DD1297ED0C300424994 /* AuthPresenter.swift in Sources */,
 				BA3A6DE3297ED1B400424994 /* CoinProtocols.swift in Sources */,
+				BA42704D2983DCCE00CD5401 /* NetworkService.swift in Sources */,
 				BA3A6DC4297ED01900424994 /* APIManager.swift in Sources */,
 				BA3A6DD5297ED0D500424994 /* AuthRouter.swift in Sources */,
 				BA3A6DAA297ECEFF00424994 /* AppDelegate.swift in Sources */,
