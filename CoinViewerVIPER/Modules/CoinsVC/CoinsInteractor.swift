@@ -8,43 +8,30 @@
 import Foundation
 
 class CoinsInteractor: PresenterToInteractorCoinsProtocol {
-
-    let urlString = "https://data.messari.io/api/v1/assets/btc/metrics"
+    
+    let urlStrings = ["https://data.messari.io/api/v1/assets/btc/metrics", "https://data.messari.io/api/v1/assets/eth/metrics", "https://data.messari.io/api/v1/assets/tron/metrics", "https://data.messari.io/api/v1/assets/luna/metrics", "https://data.messari.io/api/v1/assets/polcadot/metrics", "https://data.messari.io/api/v1/assets/dogecoin/metrics", "https://data.messari.io/api/v1/assets/tether/metrics", "https://data.messari.io/api/v1/assets/stellar/metrics", "https://data.messari.io/api/v1/assets/cardano/metrics", "https://data.messari.io/api/v1/assets/xrp/metrics"]
+    
     
     // MARK: Properties
     weak var presenter: InteractorToPresenterCoinsProtocol?
     var coins = [DataClass]()
     
     func loadCoins() {
-          
-//        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-//
-//            ApiManager.shared.getDataFromNet { [weak self] result in
-//                switch result {
-//                case .success(let data):
-//                    self?.coins = data.list
-//                    guard let listOfCoins = self?.coins else { return }
-//                    self?.presenter?.fetchCoinsSuccess(coins: listOfCoins)
-//                case .failure(let error):
-//                    self?.presenter?.fetchQuotesFailure(error: error)
-//                }
-//            }
-//        }
         
-//        NetworkDataFetcher.shared.fetchCoins(urlString: urlString) { [weak self] (searchResponse) in
-//            guard let searchResponse = searchResponse else { return }
-//            guard let listOfCoins = searchResponse.list else { return }
-//            self?.presenter?.fetchCoinsSuccess(coins: listOfCoins)
-//
-//            // не нужен                   self?.presenter?.fetchQuotesFailure(error: error)
-//        }
+        let group = DispatchGroup()
         
-        NetworkDataFetcher.shared.fetchCoins(urlString: urlString) { [weak self] (searchResponse) in
-            guard let searchResponce = searchResponse else { return }
-            guard let oneCoin = searchResponce.data else { return }
-            self?.coins.append(oneCoin)
-            self?.presenter?.fetchCoinsSuccess(coins: self!.coins)
+        urlStrings.map { urlString in
+            group.enter()
+            NetworkDataFetcher.shared.fetchCoins(urlString: urlString) { [weak self] (searchResponse) in
+                guard let searchResponce = searchResponse else { return }
+                guard let oneCoin = searchResponce.data else { return }
+                self?.coins.append(oneCoin)
+                self?.presenter?.fetchCoinsSuccess(coins: self!.coins)
+                group.leave()
+            }
         }
+        
+        //            // не нужен                   self?.presenter?.fetchQuotesFailure(error: error)
     }
     
     func retrieveCoin(at index: Int) {

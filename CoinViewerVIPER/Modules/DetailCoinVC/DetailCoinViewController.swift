@@ -58,7 +58,7 @@ extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
         print("View receives the response from Presenter and updates itself.")
         nameLabel.text = coin.name
         priceLabel.text = coin.symbol
-        changeLabel.text = String(coin.marketData!.priceUsd!)
+        changeLabel.text = String(coin.marketData!.priceUsd ?? 0.0)
     }
     
     func onGetCoinFailure() {
