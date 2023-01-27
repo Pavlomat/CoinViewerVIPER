@@ -54,11 +54,11 @@ class CoinDetailViewController: BaseViewController {
 
 extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
   
-    func onGetCoinSuccess(for coin: List) {
+    func onGetCoinSuccess(for coin: DataClass) {
         print("View receives the response from Presenter and updates itself.")
-        nameLabel.text = String(coin.dt!)
-        priceLabel.text = String(coin.main!.temp!)
-        changeLabel.text = String(coin.main!.tempKf!)
+        nameLabel.text = coin.name
+        priceLabel.text = coin.symbol
+        changeLabel.text = String(coin.marketData!.priceUsd!)
     }
     
     func onGetCoinFailure() {

@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ApiManager {
+class ApiManager {  //не нужен удалить
     
 //    static let shared = ApiManager()
     
     let urlString = "https://api.openweathermap.org/data/2.5/forecast?lat=48.8534&lon=2.3488&appid=208febed9f28a657758f1654191cc5e7"
     
     
-    func getDataFromNet(completionHandler: @escaping (Result<PurpleData, Error>) -> ()) {
+    func getDataFromNet(completionHandler: @escaping (Result<MainStruct, Error>) -> ()) {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -28,7 +28,7 @@ class ApiManager {
             do {
                 guard
                     let data = data,
-                    let decodedData = try? JSONDecoder().decode(PurpleData.self, from: data)
+                    let decodedData = try? JSONDecoder().decode(MainStruct.self, from: data)
 
                 else { return }
 

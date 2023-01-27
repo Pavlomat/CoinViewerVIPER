@@ -76,9 +76,9 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         guard let coin = presenter?.textLabelText(indexPath: indexPath) else { return cell }
-        cell.nameLabel.text = String(coin.dt!)
-        cell.changeLabel.text = String(coin.main!.temp!)
-        cell.priceLabel.text = String(coin.main!.tempKf!)
+        cell.nameLabel.text = coin.name
+        cell.priceLabel.text = coin.symbol
+        cell.changeLabel.text = String(coin.marketData!.priceUsd!)
         return cell
     }
     

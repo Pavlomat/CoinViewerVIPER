@@ -10,7 +10,7 @@ import UIKit
 class CoinDetailRouter: PresenterToRouterCoinDetailProtocol {
     
     // MARK: Static methods
-    static func createModule(with coin: List) -> UIViewController {
+    static func createModule(with coin: DataClass) -> UIViewController {
         
         print("QuoteDetailRouter creates the QuoteDetail module.")
         let viewController = CoinDetailViewController()

@@ -10,7 +10,7 @@ import UIKit
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewCoinDetailProtocol: AnyObject {
     
-    func onGetCoinSuccess(for coin: List)
+    func onGetCoinSuccess(for coin: DataClass)
     func onGetCoinFailure()
 }
 
@@ -32,7 +32,7 @@ protocol PresenterToInteractorCoinDetailProtocol: AnyObject {
     
     var presenter: InteractorToPresenterCoinDetailProtocol? { get set }
     
-    var coin: List? { get set }
+    var coin: DataClass? { get set }
     
     func getImageDataFromURL()
     
@@ -42,7 +42,7 @@ protocol PresenterToInteractorCoinDetailProtocol: AnyObject {
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterCoinDetailProtocol: AnyObject {
     
-    func getTappedCoinSuccess(coin: List)
+    func getTappedCoinSuccess(coin: DataClass)
     func getTappedCoinFailure()
     
 }
@@ -51,6 +51,6 @@ protocol InteractorToPresenterCoinDetailProtocol: AnyObject {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterCoinDetailProtocol: AnyObject {
     
-    static func createModule(with coin: List) -> UIViewController
+    static func createModule(with coin: DataClass) -> UIViewController
 }
 

@@ -11,7 +11,7 @@ class CoinDetailInteractor: PresenterToInteractorCoinDetailProtocol {
     
     // MARK: Properties
     weak var presenter: InteractorToPresenterCoinDetailProtocol?
-    var coin: List?
+    var coin: DataClass?
     
     func getImageDataFromURL() {
         print("Interactor receives the request from Presenter to get image data from the server.")

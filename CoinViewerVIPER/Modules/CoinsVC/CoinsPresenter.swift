@@ -11,7 +11,7 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
     
     
     // MARK: Properties
-    var coins: [List]?
+    var coins: [DataClass]?
     weak var view: PresenterToViewCoinsProtocol?
     var interactor: PresenterToInteractorCoinsProtocol?
     var router: PresenterToRouterCoinsProtocol?
@@ -35,7 +35,7 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
         return coins.count
     }
     
-    func textLabelText(indexPath: IndexPath) -> List? {
+    func textLabelText(indexPath: IndexPath) -> DataClass? {
         guard let coins = self.coins else {
             return nil
         }
@@ -56,7 +56,7 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
 // MARK: - Outputs to view
 extension CoinsPresenter: InteractorToPresenterCoinsProtocol {
     
-    func fetchCoinsSuccess(coins: [List]) {
+    func fetchCoinsSuccess(coins: [DataClass]) {
         print("Presenter receives the result from Interactor after it's done its job.")
         self.coins = coins
         view?.onFetchCoinsSuccess()
@@ -67,7 +67,7 @@ extension CoinsPresenter: InteractorToPresenterCoinsProtocol {
         view?.onFetchCoinsFailure(error: "Couldn't fetch quotes: \(error)")
     }
     
-    func getCoinSuccess(_ coin: List) {
+    func getCoinSuccess(_ coin: DataClass) {
             router?.pushToCoinDetail(on: view!, with: coin)
     }
     

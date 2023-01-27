@@ -22,7 +22,7 @@ class CoinDetailPresenter: ViewToPresenterCoinDetailProtocol {
 }
 
 extension CoinDetailPresenter: InteractorToPresenterCoinDetailProtocol {
-    func getTappedCoinSuccess(coin: List) {
+    func getTappedCoinSuccess(coin: DataClass) {
         print("Presenter receives the result from Interactor after it's done its job.")
         view?.onGetCoinSuccess(for: coin)
     }

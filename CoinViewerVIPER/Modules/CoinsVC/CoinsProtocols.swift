@@ -21,14 +21,14 @@ protocol ViewToPresenterCoinsProtocol: AnyObject {
     var interactor: PresenterToInteractorCoinsProtocol? { get set }
     var router: PresenterToRouterCoinsProtocol? { get set }
     
-    var coins: [List]? { get set }
+    var coins: [DataClass]? { get set }
     
     func viewDidLoad()
     
     func refresh()
     
     func numberOfRowsInSection() -> Int
-    func textLabelText(indexPath: IndexPath) -> List?
+    func textLabelText(indexPath: IndexPath) -> DataClass?
     
     func didSelectRowAt(index: Int)
     func deselectRowAt(index: Int)
@@ -48,10 +48,10 @@ protocol InteractorToPresenterCoinsProtocol: AnyObject {
     
 //    func didFetchCoinsFromNet(with result: Result<[List], Error>)
     
-    func fetchCoinsSuccess(coins: [List])
+    func fetchCoinsSuccess(coins: [DataClass])
     func fetchQuotesFailure(error: Error)
   
-    func getCoinSuccess(_ coin: List)
+    func getCoinSuccess(_ coin: DataClass)
     func getCoinFailure()
 
 }
@@ -62,6 +62,6 @@ protocol PresenterToRouterCoinsProtocol: AnyObject {
     
     static func createModule() -> UIViewController
     
-    func pushToCoinDetail(on view: PresenterToViewCoinsProtocol, with coin: List)
+    func pushToCoinDetail(on view: PresenterToViewCoinsProtocol, with coin: DataClass)
 }
 

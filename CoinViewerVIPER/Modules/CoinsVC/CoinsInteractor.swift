@@ -9,11 +9,11 @@ import Foundation
 
 class CoinsInteractor: PresenterToInteractorCoinsProtocol {
 
-    let urlString = "https://api.openweathermap.org/data/2.5/forecast?lat=48.8534&lon=2.3488&appid=208febed9f28a657758f1654191cc5e7"
+    let urlString = "https://data.messari.io/api/v1/assets/btc/metrics"
     
     // MARK: Properties
     weak var presenter: InteractorToPresenterCoinsProtocol?
-    var coins: [List]?
+    var coins = [DataClass]()
     
     func loadCoins() {
           
@@ -31,12 +31,19 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
 //            }
 //        }
         
+//        NetworkDataFetcher.shared.fetchCoins(urlString: urlString) { [weak self] (searchResponse) in
+//            guard let searchResponse = searchResponse else { return }
+//            guard let listOfCoins = searchResponse.list else { return }
+//            self?.presenter?.fetchCoinsSuccess(coins: listOfCoins)
+//
+//            // не нужен                   self?.presenter?.fetchQuotesFailure(error: error)
+//        }
+        
         NetworkDataFetcher.shared.fetchCoins(urlString: urlString) { [weak self] (searchResponse) in
-            guard let searchResponse = searchResponse else { return }
-            guard let listOfCoins = searchResponse.list else { return }
-            self?.presenter?.fetchCoinsSuccess(coins: listOfCoins)
-            
-            // не нужен                   self?.presenter?.fetchQuotesFailure(error: error)
+            guard let searchResponce = searchResponse else { return }
+            guard let oneCoin = searchResponce.data else { return }
+            self?.coins.append(oneCoin)
+            self?.presenter?.fetchCoinsSuccess(coins: self!.coins)
         }
     }
     

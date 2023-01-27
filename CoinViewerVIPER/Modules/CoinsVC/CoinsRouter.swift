@@ -10,7 +10,7 @@ import UIKit
 class CoinsRouter: PresenterToRouterCoinsProtocol {
     
     // MARK: - Navigation
-    func pushToCoinDetail(on view: PresenterToViewCoinsProtocol, with coin: List) {
+    func pushToCoinDetail(on view: PresenterToViewCoinsProtocol, with coin: DataClass) {
         print("CoinsRouter is instructed to push CoinDetailViewController onto the navigation stack.")
         DispatchQueue.main.async { [weak self] in
             let coinDetailViewController = CoinDetailRouter.createModule(with: coin)
