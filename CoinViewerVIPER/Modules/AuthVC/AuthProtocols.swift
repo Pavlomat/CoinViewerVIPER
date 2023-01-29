@@ -8,7 +8,9 @@
 import UIKit
 
 // MARK: View Output (Presenter -> View)
-protocol PresenterToViewAuthProtocol: AnyObject { }
+protocol PresenterToViewAuthProtocol: AnyObject {
+    func showAlert()
+}
 
 // MARK: View Input (View -> Presenter)
 protocol ViewToPresenterAuthProtocol: AnyObject {
@@ -38,6 +40,8 @@ protocol PresenterToInteractorAuthProtocol: AnyObject {
 protocol InteractorToPresenterAuthProtocol: AnyObject {
     
     func showTableView()
+    
+    func showAlert()
 
 }
 

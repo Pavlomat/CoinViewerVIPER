@@ -47,7 +47,16 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
             }
             self?.presenter?.getCoinSuccess((coins[index]))
         }
-        
+    }
+    
+    func sortTableViewAscending() {
+        coins = coins.sorted { ($0.marketData?.percentChangeUsdLast1_Hour)! < ($1.marketData?.percentChangeUsdLast1_Hour)! }
+        presenter?.fetchCoinsSuccess(coins: coins)
+    }
+    
+    func sortTableViewDescending() {
+        coins = coins.sorted { ($0.marketData?.percentChangeUsdLast1_Hour)! > ($1.marketData?.percentChangeUsdLast1_Hour)! }
+        presenter?.fetchCoinsSuccess(coins: coins)
     }
 }
 

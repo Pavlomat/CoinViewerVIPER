@@ -18,7 +18,7 @@ class AuthInteractor: PresenterToInteractorAuthProtocol {
         if login == loginString && password == passwordString {
             presenter?.showTableView()
         } else {
-            //print
+            presenter?.showAlert()
         }
     }
     

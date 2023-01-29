@@ -13,7 +13,7 @@ extension UILabel {
             label.font = UIFont.preferredFont(forTextStyle: font)
             label.adjustsFontForContentSizeCategory = true
             label.numberOfLines = 0
-            label.textColor = .white
+            label.textColor = .black
             label.textAlignment = .center
             return label
     }

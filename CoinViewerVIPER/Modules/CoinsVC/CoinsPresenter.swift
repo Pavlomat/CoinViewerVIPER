@@ -22,11 +22,6 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
         interactor?.loadCoins()
     }
     
-    func refresh() {
-        print("Presenter is being notified that the View was refreshed.")
-        interactor?.loadCoins()
-    }
-    
     func numberOfRowsInSection() -> Int {
         guard let coins = self.coins else {
             return 0
@@ -50,6 +45,15 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
     func deselectRowAt(index: Int) {
         view?.deselectRowAt(row: index)
     }
+    
+    func sortTableViewAscending() {
+        interactor?.sortTableViewAscending()
+    }
+    
+    func sortTableViewDescending() {
+        interactor?.sortTableViewDescending()
+    }
+    
     
 }
 

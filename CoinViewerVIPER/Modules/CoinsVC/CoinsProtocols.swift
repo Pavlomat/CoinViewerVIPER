@@ -25,10 +25,11 @@ protocol ViewToPresenterCoinsProtocol: AnyObject {
     
     func viewDidLoad()
     
-    func refresh()
-    
     func numberOfRowsInSection() -> Int
     func textLabelText(indexPath: IndexPath) -> DataClass?
+    
+    func sortTableViewAscending()
+    func sortTableViewDescending()
     
     func didSelectRowAt(index: Int)
     func deselectRowAt(index: Int)
@@ -40,6 +41,8 @@ protocol PresenterToInteractorCoinsProtocol: AnyObject {
     var presenter: InteractorToPresenterCoinsProtocol? { get set }
     func loadCoins()
     func retrieveCoin(at index: Int)
+    func sortTableViewAscending()
+    func sortTableViewDescending()
     
 }
 

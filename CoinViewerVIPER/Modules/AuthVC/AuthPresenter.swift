@@ -28,6 +28,11 @@ class AuthPresenter: ViewToPresenterAuthProtocol {
 }
 
 extension AuthPresenter: InteractorToPresenterAuthProtocol {
+   
+    func showAlert() {
+        view?.showAlert()
+    }
+    
   
     func showTableView() {
         router?.pushToCoinsTableView(on: view!)

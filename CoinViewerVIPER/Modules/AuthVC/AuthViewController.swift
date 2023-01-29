@@ -22,7 +22,13 @@ class AuthViewController: UIViewController {
     // MARK: - Actions
     @objc func authorizationButtonTapped() {
         //проверка на содержание полей
-        presenter?.authButtonTapped(login: loginTextField.text!, password: passwordTextField.text!)
+            presenter?.authButtonTapped(login: loginTextField.text!, password: passwordTextField.text!)
+    }
+    
+    func showAlert() {
+        let ac = UIAlertController(title: "Error", message: "Enter correct login (1234) and password (1234)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        present(ac, animated: true)
     }
     
     let loginTextField: UITextField = {
@@ -60,7 +66,7 @@ class AuthViewController: UIViewController {
         button.setTitle("Enter", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-        button.backgroundColor = .systemPink
+        button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 10
         button.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         button.addTarget(self, action: #selector(authorizationButtonTapped), for: .touchUpInside)
@@ -88,8 +94,7 @@ extension AuthViewController: PresenterToViewAuthProtocol { }
 extension AuthViewController {
     func setupUI() {
         overrideUserInterfaceStyle = .light
-        
-        self.view.backgroundColor = .green
+        view.backgroundColor = .white
         
         view.addSubview(stackView)
         

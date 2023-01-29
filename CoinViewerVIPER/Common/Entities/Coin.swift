@@ -30,7 +30,8 @@ struct DataClass: Codable {
 // MARK: - MarketData
 struct MarketData: Codable {
     let priceUsd, priceBtc: Double?
-    let priceEth: Int?
+    let priceEth: Double?
+    let percentChangeUsdLast1_Hour: Double?
     let ohlcvLast1_Hour, ohlcvLast24_Hour: OhlcvLastHour?
     let lastTradeAt: Date?
 
@@ -38,6 +39,7 @@ struct MarketData: Codable {
         case priceUsd = "price_usd"
         case priceBtc = "price_btc"
         case priceEth = "price_eth"
+        case percentChangeUsdLast1_Hour = "percent_change_usd_last_1_hour"
         case ohlcvLast1_Hour = "ohlcv_last_1_hour"
         case ohlcvLast24_Hour = "ohlcv_last_24_hour"
         case lastTradeAt = "last_trade_at"

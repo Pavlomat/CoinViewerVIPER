@@ -14,11 +14,22 @@ class CoinsViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         presenter?.viewDidLoad()
+        sortTableView()
     }
     
     // MARK: - Actions
-    @objc func refresh() {
-        presenter?.refresh()
+    func sortTableView() {
+        let ascendingSort = UIAction(title: "Ascending", image: UIImage(systemName: "arrow.up.square")) { [weak self] (action) in
+            self?.onFetchCoinsSuccess()
+        }
+        
+        let descendingSort = UIAction(title: "Descending", image: UIImage(systemName: "arrow.down.app")) { [weak self] (action) in
+            self?.onFetchCoinsSuccess()
+        }
+        
+        let menu = UIMenu(title: "Sort menu", options: .displayInline, children: [ascendingSort , descendingSort])
+        let navItems = [UIBarButtonItem(systemItem: .compose , menu: menu)]
+        self.navigationItem.rightBarButtonItems = navItems
     }
 
     // MARK: - Properties
@@ -76,9 +87,9 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         guard let coin = presenter?.textLabelText(indexPath: indexPath) else { return cell }
-        cell.nameLabel.text = coin.name
-        cell.priceLabel.text = coin.symbol
-        cell.changeLabel.text = String(coin.marketData!.priceUsd ?? 0.0)
+        cell.nameLabel.text = coin.symbol
+        cell.priceLabel.text = String(coin.marketData!.priceUsd ?? 0.0)
+        cell.changeLabel.text = String(coin.marketData!.percentChangeUsdLast1_Hour ?? 0.0)
         return cell
     }
     
@@ -92,10 +103,8 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
 extension CoinsViewController {
     func setupUI() {
         overrideUserInterfaceStyle = .light
-        tableView.backgroundColor = .systemBlue
         self.view.addSubview(tableView)
         self.view.addSubview(activityIndicator)
-
         
         NSLayoutConstraint.activate([
             tableView.widthAnchor.constraint(equalTo: self.view.widthAnchor),

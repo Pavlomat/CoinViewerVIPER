@@ -17,7 +17,7 @@ class TableViewCell: UITableViewCell {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, priceLabel, changeLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = UIStackView.spacingUseSystem
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         stackView.alignment = .fill
         stackView.axis = .horizontal
         return stackView
@@ -33,8 +33,7 @@ class TableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        backgroundColor = UIColor(red: 145/255, green: 222/255, blue: 166/255, alpha: 0.5)
-        contentView.backgroundColor = UIColor(red: 145/255, green: 222/255, blue: 166/255, alpha: 0.5)
+        contentView.backgroundColor = .white
         contentView.addSubview(stackView)
 
         let margins = contentView.readableContentGuide

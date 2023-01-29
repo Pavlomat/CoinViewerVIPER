@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoinDetailViewController: BaseViewController {
+class CoinDetailViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -45,10 +45,6 @@ class CoinDetailViewController: BaseViewController {
 //        self.navigationController?.popToRootViewController(animated: true)
 //    }
     
-    override func setupView() {
-        
-    }
-    
 }
 
 
@@ -56,9 +52,9 @@ extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
   
     func onGetCoinSuccess(for coin: DataClass) {
         print("View receives the response from Presenter and updates itself.")
-        nameLabel.text = coin.name
-        priceLabel.text = coin.symbol
-        changeLabel.text = String(coin.marketData!.priceUsd ?? 0.0)
+        nameLabel.text = coin.symbol
+        priceLabel.text = String(coin.marketData!.priceUsd ?? 0.0)
+        changeLabel.text = String(coin.marketData!.percentChangeUsdLast1_Hour ?? 0.0)
     }
     
     func onGetCoinFailure() {
@@ -72,8 +68,7 @@ extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
 extension CoinDetailViewController {
     func setupUI() {
         overrideUserInterfaceStyle = .light
-        
-        self.view.backgroundColor = .orange
+        view.backgroundColor = .white
         
         view.addSubview(stackView)
         
