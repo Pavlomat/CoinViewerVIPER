@@ -50,18 +50,7 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
     }
     
     func sortTableViewAscending() {
-        
-//        let sortedArray = coins.sorted { (lhs, rhs) -> Bool in
-//            switch (lhs, rhs) {
-//            case let(l?, r?): return l < r // Both lhs and rhs are not nil
-//            case (nil, _): return false    // Lhs is nil
-//            case (_?, nil): return true    // Lhs is not nil, rhs is nil
-//            }
-//        }
-        
         coins = coins.sorted { Double($0.marketData?.priceUsd ?? -1.0) < Double($1.marketData?.priceUsd ?? -1.0) }
-//        coins = coins.sorted { ($0.marketData?.percentChangeUsdLast1_Hour)
-//        }
         presenter?.fetchCoinsSuccess(coins: coins)
     }
     
@@ -69,16 +58,5 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
         coins = coins.sorted { Double($0.marketData?.priceUsd ?? -1.0) > Double($1.marketData?.priceUsd ?? -1.0) }
         presenter?.fetchCoinsSuccess(coins: coins)
     }
-    
-    func compareOptionalsWithLargeNil<T:Comparable>(lhs: T?, rhs: T?) -> Bool {
-        switch (lhs, rhs) {
-        case let(l?, r?): return l < r // Both lhs and rhs are not nil
-        case (nil, _): return false    // Lhs is nil
-        case (_?, nil): return true    // Lhs is not nil, rhs is nil
-        }
-    }
-    
-//    static func sortData(lhs: DataClass, rhs: DataClass) -> Bool { lhs.marketData?.percentChangeUsdLast1_Hour > rhs.marketData?.percentChangeUsdLast1_Hour }
 }
-
 
