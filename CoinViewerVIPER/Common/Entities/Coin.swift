@@ -14,6 +14,7 @@ struct MainStruct: Codable {
 
 // MARK: - DataClass
 struct DataClass: Codable {
+    
     let id: String?
     let serialID: Int?
     let symbol, name, slug: String?
@@ -29,6 +30,7 @@ struct DataClass: Codable {
 
 // MARK: - MarketData
 struct MarketData: Codable {
+    
     let priceUsd, priceBtc: Double?
     let priceEth: Double?
     let percentChangeUsdLast1_Hour: Double?
@@ -48,6 +50,7 @@ struct MarketData: Codable {
 
 // MARK: - OhlcvLastHour
 struct OhlcvLastHour: Codable {
+    
     let ohlcvLastHourOpen, high, low, close: Double?
     let volume: Double?
 

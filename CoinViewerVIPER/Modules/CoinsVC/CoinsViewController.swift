@@ -20,11 +20,11 @@ class CoinsViewController: UIViewController {
     // MARK: - Actions
     func sortTableView() {
         let ascendingSort = UIAction(title: "Ascending", image: UIImage(systemName: "arrow.up.square")) { [weak self] (action) in
-            self?.onFetchCoinsSuccess()
+            self?.presenter?.sortTableViewAscending()
         }
         
         let descendingSort = UIAction(title: "Descending", image: UIImage(systemName: "arrow.down.app")) { [weak self] (action) in
-            self?.onFetchCoinsSuccess()
+            self?.presenter?.sortTableViewDescending()
         }
         
         let menu = UIMenu(title: "Sort menu", options: .displayInline, children: [ascendingSort , descendingSort])
