@@ -15,7 +15,6 @@ class CoinDetailPresenter: ViewToPresenterCoinDetailProtocol {
     var router: PresenterToRouterCoinDetailProtocol?
     
     func viewDidLoad() {
-        print("Presenter is being notified that the View was loaded.")
         interactor?.getImageDataFromURL()
     }
     
@@ -28,12 +27,10 @@ class CoinDetailPresenter: ViewToPresenterCoinDetailProtocol {
 // MARK: - Outputs to view
 extension CoinDetailPresenter: InteractorToPresenterCoinDetailProtocol {
     func getTappedCoinSuccess(coin: CoinData) {
-        print("Presenter receives the result from Interactor after it's done its job.")
         view?.onGetCoinSuccess(for: coin)
     }
     
     func getTappedCoinFailure() {
-        print("Presenter receives the result from Interactor after it's done its job.")
         view?.onGetCoinFailure()
     }
     

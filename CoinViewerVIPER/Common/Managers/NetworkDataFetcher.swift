@@ -9,6 +9,7 @@ import Foundation
 
 class NetworkDataFetcher {
     
+    //MARK: - Properties
     static let shared = NetworkDataFetcher()
     let networkService = NetworkService()
     

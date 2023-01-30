@@ -10,7 +10,7 @@ import Foundation
 class AuthPresenter: ViewToPresenterAuthProtocol {
     
     // MARK: Properties
-    var view: PresenterToViewAuthProtocol?
+    weak var view: PresenterToViewAuthProtocol?
     var interactor: PresenterToInteractorAuthProtocol?
     var router: PresenterToRouterAuthProtocol?
 
