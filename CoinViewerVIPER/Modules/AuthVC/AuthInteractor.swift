@@ -9,10 +9,10 @@ import Foundation
 
 class AuthInteractor: PresenterToInteractorAuthProtocol {
     
+    // MARK: Properties
+    var presenter: InteractorToPresenterAuthProtocol?
     var loginString = "1234"
     var passwordString = "1234"
-    
-    var presenter: InteractorToPresenterAuthProtocol?
     
     func checkPassword(login: String, password: String) {
         if login == loginString && password == passwordString {

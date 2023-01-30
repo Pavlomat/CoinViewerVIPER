@@ -25,6 +25,7 @@ class CoinDetailPresenter: ViewToPresenterCoinDetailProtocol {
     
 }
 
+// MARK: - Outputs to view
 extension CoinDetailPresenter: InteractorToPresenterCoinDetailProtocol {
     func getTappedCoinSuccess(coin: CoinData) {
         print("Presenter receives the result from Interactor after it's done its job.")
@@ -39,7 +40,6 @@ extension CoinDetailPresenter: InteractorToPresenterCoinDetailProtocol {
     func didLogoutButtonTapped() {
         router?.pushToAuthViewController()
     }
-    
 }
 
 

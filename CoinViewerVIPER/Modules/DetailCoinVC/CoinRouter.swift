@@ -11,8 +11,6 @@ class CoinDetailRouter: PresenterToRouterCoinDetailProtocol {
     
     // MARK: Static methods
     static func createModule(with coin: CoinData) -> UIViewController {
-        
-        print("QuoteDetailRouter creates the QuoteDetail module.")
         let viewController = CoinDetailViewController()
         
         let presenter: ViewToPresenterCoinDetailProtocol & InteractorToPresenterCoinDetailProtocol = CoinDetailPresenter()
@@ -27,17 +25,14 @@ class CoinDetailRouter: PresenterToRouterCoinDetailProtocol {
         return viewController
     }
     
+    // MARK: - Navigation
     func pushToAuthViewController() {
-        print("Logout")
-        let authViewController = AuthRouter.logoutCreateModule()
-        let navigationController = UINavigationController(rootViewController: authViewController)
+        let authViewController = AuthRouter.createModule()
         
         let scenes = UIApplication.shared.connectedScenes
         let windowScene = scenes.first as? UIWindowScene
         let window = windowScene?.windows.first
-        window?.rootViewController = navigationController
-        
+        window?.rootViewController = authViewController
     }
-    
 }
 

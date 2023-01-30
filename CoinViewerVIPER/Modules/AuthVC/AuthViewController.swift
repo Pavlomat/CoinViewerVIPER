@@ -16,20 +16,17 @@ class AuthViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
-    //MARK: - Properties
-    var presenter: ViewToPresenterAuthProtocol?
-    
     // MARK: - Actions
     @objc func authorizationButtonTapped() {
-        //проверка на содержание полей
             presenter?.authButtonTapped(login: loginTextField.text!, password: passwordTextField.text!)
     }
     
-    func showAlert() {
-        let ac = UIAlertController(title: "Error", message: "Enter correct login (1234) and password (1234)", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
-        present(ac, animated: true)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
+    
+    //MARK: - Properties
+    var presenter: ViewToPresenterAuthProtocol?
     
     let loginTextField: UITextField = {
         let view = UITextField()
@@ -83,17 +80,19 @@ class AuthViewController: UIViewController {
         return stackView
     }()
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
 }
 
-extension AuthViewController: PresenterToViewAuthProtocol { }
+extension AuthViewController: PresenterToViewAuthProtocol {
+    func showAlert() {
+        let ac = UIAlertController(title: "Error", message: "Enter correct login (1234) and password (1234)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        present(ac, animated: true)
+    }
+}
 
 // MARK: - UI Setup
 extension AuthViewController {
     func setupUI() {
-//        overrideUserInterfaceStyle = .light
         view.backgroundColor = .white
         
         view.addSubview(stackView)

@@ -14,7 +14,6 @@ class CoinDetailInteractor: PresenterToInteractorCoinDetailProtocol {
     var coin: CoinData?
     
     func getImageDataFromURL() {
-        print("Interactor receives the request from Presenter to get image data from the server.")
         presenter?.getTappedCoinSuccess(coin: self.coin!)
     }
     

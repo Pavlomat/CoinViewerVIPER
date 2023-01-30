@@ -28,10 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if defaults.bool(forKey: "UserLogged") == true {
             window.rootViewController = CoinsRouter.createModule()
-//            window.switchRootViewController(CoinsRouter.createModule())
         } else {
             window.rootViewController = AuthRouter.createModule()
-//            window.switchRootViewController(AuthRouter.createModule())
         }
     }
 

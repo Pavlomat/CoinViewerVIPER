@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - MainStruct
+// MARK: - Coin
 struct Coin: Codable {
     let data: CoinData?
 }

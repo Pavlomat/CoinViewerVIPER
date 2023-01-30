@@ -18,7 +18,6 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
     
     // MARK: Inputs from view
     func viewDidLoad() {
-        print("Presenter is being notified that the View was loaded.")
         interactor?.loadCoins()
     }
     
@@ -65,14 +64,8 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
 extension CoinsPresenter: InteractorToPresenterCoinsProtocol {
     
     func fetchCoinsSuccess(coins: [CoinData]) {
-        print("Presenter receives the result from Interactor after it's done its job.")
         self.coins = coins
         view?.onFetchCoinsSuccess()
-    }
-    
-    func fetchQuotesFailure(error: Error) {
-        print("Presenter receives the result from Interactor after it's done its job.")
-        view?.onFetchCoinsFailure(error: "Couldn't fetch quotes: \(error)")
     }
     
     func getCoinSuccess(_ coin: CoinData) {

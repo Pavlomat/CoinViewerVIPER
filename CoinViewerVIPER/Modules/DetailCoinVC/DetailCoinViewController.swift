@@ -34,6 +34,7 @@ class CoinDetailViewController: UIViewController {
         return stackView
     }()
     
+    // MARK: - Actions
     @objc func logoutButtonTapped() {
         presenter?.logoutButtonTapped()
     }
@@ -44,7 +45,6 @@ class CoinDetailViewController: UIViewController {
 extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
   
     func onGetCoinSuccess(for coin: CoinData) {
-        print("View receives the response from Presenter and updates itself.")
         nameLabel.text = coin.symbol
         
         if let price = coin.marketData!.priceUsd {
@@ -58,11 +58,9 @@ extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
         } else {
             changeLabel.text = "No data"
         }
-        
     }
     
     func onGetCoinFailure() {
-        print("View receives the response from Presenter and updates itself.")
         self.navigationItem.title = "Failure"
     }
     
@@ -71,9 +69,7 @@ extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
 // MARK: - UI Setup
 extension CoinDetailViewController {
     func setupUI() {
-//        overrideUserInterfaceStyle = .light
         view.backgroundColor = .white
-        
         view.addSubview(stackView)
         
         let margins = view.layoutMarginsGuide
@@ -85,6 +81,5 @@ extension CoinDetailViewController {
             stackView.widthAnchor.constraint(equalTo: margins.widthAnchor)
         ])
     }
-    
 }
 

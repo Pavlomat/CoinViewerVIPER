@@ -10,8 +10,6 @@ import UIKit
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewCoinsProtocol: AnyObject {
     func onFetchCoinsSuccess()
-    func onFetchCoinsFailure(error: String)
-    
     func deselectRowAt(row: Int)
 }
 
@@ -20,7 +18,6 @@ protocol ViewToPresenterCoinsProtocol: AnyObject {
     var view: PresenterToViewCoinsProtocol? { get set }
     var interactor: PresenterToInteractorCoinsProtocol? { get set }
     var router: PresenterToRouterCoinsProtocol? { get set }
-    
     var coins: [CoinData]? { get set }
     
     func viewDidLoad()
@@ -51,11 +48,7 @@ protocol PresenterToInteractorCoinsProtocol: AnyObject {
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterCoinsProtocol: AnyObject {
     
-//    func didFetchCoinsFromNet(with result: Result<[List], Error>)
-    
     func fetchCoinsSuccess(coins: [CoinData])
-    func fetchQuotesFailure(error: Error)
-  
     func getCoinSuccess(_ coin: CoinData)
     func getCoinFailure()
     func didLogoutButtonTapped()
@@ -65,11 +58,9 @@ protocol InteractorToPresenterCoinsProtocol: AnyObject {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterCoinsProtocol: AnyObject {
-    
     static func createModule() -> UINavigationController
     
     func pushToCoinDetail(on view: PresenterToViewCoinsProtocol, with coin: CoinData)
-    
     func pushToAuthViewController()
 }
 

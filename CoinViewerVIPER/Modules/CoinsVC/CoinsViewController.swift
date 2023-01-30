@@ -16,7 +16,7 @@ class CoinsViewController: UIViewController {
         presenter?.viewDidLoad()
         sortTableView()
         
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButtonTapped))
     }
     
     // MARK: - Actions
@@ -31,7 +31,7 @@ class CoinsViewController: UIViewController {
         
         let menu = UIMenu(title: "Sort by price USD", options: .displayInline, children: [ascendingSort , descendingSort])
         let navItems = [UIBarButtonItem(title: "Sort", image: nil, menu: menu)]
-        self.navigationItem.rightBarButtonItems = navItems
+        self.navigationItem.leftBarButtonItems = navItems
     }
     
     @objc func logoutButtonTapped() {
@@ -64,15 +64,10 @@ class CoinsViewController: UIViewController {
 
 extension CoinsViewController: PresenterToViewCoinsProtocol {
     func onFetchCoinsSuccess() {
-        print("View receives the response from Presenter and updates itself.")
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
             self?.activityIndicator.stopAnimating()
         }
-    }
-    
-    func onFetchCoinsFailure(error: String) {
-        print("View receives the response from Presenter with error: \(error)")
     }
     
     func deselectRowAt(row: Int) {
@@ -120,7 +115,6 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - UI Setup
 extension CoinsViewController {
     func setupUI() {
-//        overrideUserInterfaceStyle = .light
         self.view.addSubview(tableView)
         self.view.addSubview(activityIndicator)
         

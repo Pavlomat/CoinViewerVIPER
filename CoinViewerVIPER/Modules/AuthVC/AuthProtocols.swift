@@ -19,38 +19,28 @@ protocol ViewToPresenterAuthProtocol: AnyObject {
     var router: PresenterToRouterAuthProtocol? { get set }
     
     func viewDidLoad()
-    
     func authButtonTapped(login: String, password: String)
-    
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorAuthProtocol: AnyObject {
-    
     var loginString: String  { get set }
     var passwordString: String   { get set }
-    
     var presenter: InteractorToPresenterAuthProtocol? { get set }
 
     func checkPassword(login: String, password: String)
-    
 }
 
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterAuthProtocol: AnyObject {
-    
     func showTableView()
-    
     func showAlert()
-
 }
 
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterAuthProtocol: AnyObject {
-    
     static func createModule() -> UINavigationController
-    
     func pushToCoinsTableView()
 }
 

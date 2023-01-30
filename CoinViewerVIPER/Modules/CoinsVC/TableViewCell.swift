@@ -9,6 +9,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    // MARK: - Properties
     let nameLabel = UILabel.createLabel(font: .headline)
     let priceLabel = UILabel.createLabel(font: .body)
     let changeLabel = UILabel.createLabel(font: .body)
@@ -25,14 +26,15 @@ class TableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupView()
+        setupUI()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    private func setupView() {
+    // MARK: - UI Setup
+    private func setupUI() {
         contentView.backgroundColor = .white
         contentView.addSubview(stackView)
 
