@@ -35,7 +35,7 @@ extension AuthPresenter: InteractorToPresenterAuthProtocol {
     
   
     func showTableView() {
-        router?.pushToCoinsTableView(on: view!)
+        router?.pushToCoinsTableView()
     }
 
 }

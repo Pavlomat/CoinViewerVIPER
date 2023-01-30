@@ -10,7 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    let defaults = UserDefaults.standard
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
@@ -23,8 +24,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         window.windowScene = windowScene
-        window.rootViewController = AuthRouter.createModule()
         window.makeKeyAndVisible()
+        
+        if defaults.bool(forKey: "UserLogged") == true {
+            window.rootViewController = CoinsRouter.createModule()
+//            window.switchRootViewController(CoinsRouter.createModule())
+        } else {
+            window.rootViewController = AuthRouter.createModule()
+//            window.switchRootViewController(AuthRouter.createModule())
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -11,12 +11,16 @@ class CoinDetailInteractor: PresenterToInteractorCoinDetailProtocol {
     
     // MARK: Properties
     weak var presenter: InteractorToPresenterCoinDetailProtocol?
-    var coin: DataClass?
+    var coin: CoinData?
     
     func getImageDataFromURL() {
         print("Interactor receives the request from Presenter to get image data from the server.")
         presenter?.getTappedCoinSuccess(coin: self.coin!)
     }
     
+    func logoutButtonTapped() {
+        SceneDelegate().defaults.set(false, forKey: "UserLogged")
+        presenter?.didLogoutButtonTapped()
+    }
 
 }

@@ -11,7 +11,7 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
     
     
     // MARK: Properties
-    var coins: [DataClass]?
+    var coins: [CoinData]?
     weak var view: PresenterToViewCoinsProtocol?
     var interactor: PresenterToInteractorCoinsProtocol?
     var router: PresenterToRouterCoinsProtocol?
@@ -30,7 +30,7 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
         return coins.count
     }
     
-    func textLabelText(indexPath: IndexPath) -> DataClass? {
+    func textLabelText(indexPath: IndexPath) -> CoinData? {
         guard let coins = self.coins else {
             return nil
         }
@@ -54,13 +54,17 @@ class CoinsPresenter: ViewToPresenterCoinsProtocol {
         interactor?.sortTableViewDescending()
     }
     
+    func logoutButtonTapped() {
+        interactor?.logoutButtonTapped()
+    }
+    
     
 }
 
 // MARK: - Outputs to view
 extension CoinsPresenter: InteractorToPresenterCoinsProtocol {
     
-    func fetchCoinsSuccess(coins: [DataClass]) {
+    func fetchCoinsSuccess(coins: [CoinData]) {
         print("Presenter receives the result from Interactor after it's done its job.")
         self.coins = coins
         view?.onFetchCoinsSuccess()
@@ -71,12 +75,16 @@ extension CoinsPresenter: InteractorToPresenterCoinsProtocol {
         view?.onFetchCoinsFailure(error: "Couldn't fetch quotes: \(error)")
     }
     
-    func getCoinSuccess(_ coin: DataClass) {
+    func getCoinSuccess(_ coin: CoinData) {
             router?.pushToCoinDetail(on: view!, with: coin)
     }
     
     func getCoinFailure() {
         print("Couldn't retrieve quote by index")
+    }
+    
+    func didLogoutButtonTapped() {
+        router?.pushToAuthViewController()
     }
 }
 

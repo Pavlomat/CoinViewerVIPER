@@ -19,10 +19,14 @@ class CoinDetailPresenter: ViewToPresenterCoinDetailProtocol {
         interactor?.getImageDataFromURL()
     }
     
+    func logoutButtonTapped() {
+        interactor?.logoutButtonTapped()
+    }
+    
 }
 
 extension CoinDetailPresenter: InteractorToPresenterCoinDetailProtocol {
-    func getTappedCoinSuccess(coin: DataClass) {
+    func getTappedCoinSuccess(coin: CoinData) {
         print("Presenter receives the result from Interactor after it's done its job.")
         view?.onGetCoinSuccess(for: coin)
     }
@@ -30,6 +34,10 @@ extension CoinDetailPresenter: InteractorToPresenterCoinDetailProtocol {
     func getTappedCoinFailure() {
         print("Presenter receives the result from Interactor after it's done its job.")
         view?.onGetCoinFailure()
+    }
+    
+    func didLogoutButtonTapped() {
+        router?.pushToAuthViewController()
     }
     
 }

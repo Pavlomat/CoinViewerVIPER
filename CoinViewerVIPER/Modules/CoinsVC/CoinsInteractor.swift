@@ -14,7 +14,7 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
     
     // MARK: Properties
     weak var presenter: InteractorToPresenterCoinsProtocol?
-    var coins = [DataClass]()
+    var coins = [CoinData]()
     
     func loadCoins() {
         
@@ -57,6 +57,11 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
     func sortTableViewDescending() {
         coins = coins.sorted { Double($0.marketData?.priceUsd ?? -1.0) > Double($1.marketData?.priceUsd ?? -1.0) }
         presenter?.fetchCoinsSuccess(coins: coins)
+    }
+    
+    func logoutButtonTapped() {
+        SceneDelegate().defaults.set(false, forKey: "UserLogged")
+        presenter?.didLogoutButtonTapped()
     }
 }
 

@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - MainStruct
-struct MainStruct: Codable {
-    let data: DataClass?
+struct Coin: Codable {
+    let data: CoinData?
 }
 
-// MARK: - DataClass
-struct DataClass: Codable {
+// MARK: - CoinData
+struct CoinData: Codable {
     
     let id: String?
     let serialID: Int?

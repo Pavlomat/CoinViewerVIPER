@@ -21,15 +21,16 @@ protocol ViewToPresenterCoinsProtocol: AnyObject {
     var interactor: PresenterToInteractorCoinsProtocol? { get set }
     var router: PresenterToRouterCoinsProtocol? { get set }
     
-    var coins: [DataClass]? { get set }
+    var coins: [CoinData]? { get set }
     
     func viewDidLoad()
     
     func numberOfRowsInSection() -> Int
-    func textLabelText(indexPath: IndexPath) -> DataClass?
+    func textLabelText(indexPath: IndexPath) -> CoinData?
     
     func sortTableViewAscending()
     func sortTableViewDescending()
+    func logoutButtonTapped()
     
     func didSelectRowAt(index: Int)
     func deselectRowAt(index: Int)
@@ -43,6 +44,7 @@ protocol PresenterToInteractorCoinsProtocol: AnyObject {
     func retrieveCoin(at index: Int)
     func sortTableViewAscending()
     func sortTableViewDescending()
+    func logoutButtonTapped()
     
 }
 
@@ -51,11 +53,12 @@ protocol InteractorToPresenterCoinsProtocol: AnyObject {
     
 //    func didFetchCoinsFromNet(with result: Result<[List], Error>)
     
-    func fetchCoinsSuccess(coins: [DataClass])
+    func fetchCoinsSuccess(coins: [CoinData])
     func fetchQuotesFailure(error: Error)
   
-    func getCoinSuccess(_ coin: DataClass)
+    func getCoinSuccess(_ coin: CoinData)
     func getCoinFailure()
+    func didLogoutButtonTapped()
 
 }
 
@@ -63,8 +66,10 @@ protocol InteractorToPresenterCoinsProtocol: AnyObject {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterCoinsProtocol: AnyObject {
     
-    static func createModule() -> UIViewController
+    static func createModule() -> UINavigationController
     
-    func pushToCoinDetail(on view: PresenterToViewCoinsProtocol, with coin: DataClass)
+    func pushToCoinDetail(on view: PresenterToViewCoinsProtocol, with coin: CoinData)
+    
+    func pushToAuthViewController()
 }
 

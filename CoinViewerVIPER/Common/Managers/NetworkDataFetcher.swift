@@ -12,14 +12,14 @@ class NetworkDataFetcher {
     static let shared = NetworkDataFetcher()
     let networkService = NetworkService()
     
-    func fetchCoins(urlString: String, response: @escaping (MainStruct?) -> ()) {
+    func fetchCoins(urlString: String, response: @escaping (Coin?) -> ()) {
         networkService.request(urlString: urlString) { (result) in
             switch result {
             case .success(let data):
                 do {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601
-                    let coins = try decoder.decode(MainStruct.self, from: data)
+                    let coins = try decoder.decode(Coin.self, from: data)
                     response(coins)
                 } catch let jsonError {
                     print("Failed to decode json: \(jsonError)")

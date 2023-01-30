@@ -93,7 +93,7 @@ extension AuthViewController: PresenterToViewAuthProtocol { }
 // MARK: - UI Setup
 extension AuthViewController {
     func setupUI() {
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
         view.backgroundColor = .white
         
         view.addSubview(stackView)

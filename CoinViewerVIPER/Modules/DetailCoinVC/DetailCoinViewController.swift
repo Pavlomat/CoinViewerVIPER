@@ -14,6 +14,7 @@ class CoinDetailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         presenter?.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButtonTapped))
     }
     
     // MARK: - Properties
@@ -33,24 +34,16 @@ class CoinDetailViewController: UIViewController {
         return stackView
     }()
     
-    //    let defaults = UserDefaults.standard
-    
-    //    override func viewDidLoad() {
-    //        super.viewDidLoad()
-    //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButtonTapped))
-    //    }
-    
-//    @objc private func logoutButtonTapped() {
-//        defaults.set(false, forKey: "UserLogged")
-//        self.navigationController?.popToRootViewController(animated: true)
-//    }
+    @objc func logoutButtonTapped() {
+        presenter?.logoutButtonTapped()
+    }
     
 }
 
 
 extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
   
-    func onGetCoinSuccess(for coin: DataClass) {
+    func onGetCoinSuccess(for coin: CoinData) {
         print("View receives the response from Presenter and updates itself.")
         nameLabel.text = coin.symbol
         
@@ -78,7 +71,7 @@ extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
 // MARK: - UI Setup
 extension CoinDetailViewController {
     func setupUI() {
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
         view.backgroundColor = .white
         
         view.addSubview(stackView)

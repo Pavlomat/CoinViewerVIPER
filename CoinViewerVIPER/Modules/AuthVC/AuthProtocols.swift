@@ -51,7 +51,7 @@ protocol PresenterToRouterAuthProtocol: AnyObject {
     
     static func createModule() -> UINavigationController
     
-    func pushToCoinsTableView(on view: PresenterToViewAuthProtocol)
+    func pushToCoinsTableView()
 }
 
 

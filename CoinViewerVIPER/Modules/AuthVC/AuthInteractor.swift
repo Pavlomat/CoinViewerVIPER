@@ -16,6 +16,7 @@ class AuthInteractor: PresenterToInteractorAuthProtocol {
     
     func checkPassword(login: String, password: String) {
         if login == loginString && password == passwordString {
+            SceneDelegate().defaults.set(true, forKey: "UserLogged")
             presenter?.showTableView()
         } else {
             presenter?.showAlert()

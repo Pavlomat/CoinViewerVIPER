@@ -15,6 +15,8 @@ class CoinsViewController: UIViewController {
         setupUI()
         presenter?.viewDidLoad()
         sortTableView()
+        
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButtonTapped))
     }
     
     // MARK: - Actions
@@ -27,9 +29,13 @@ class CoinsViewController: UIViewController {
             self?.presenter?.sortTableViewDescending()
         }
         
-        let menu = UIMenu(title: "Sort menu", options: .displayInline, children: [ascendingSort , descendingSort])
-        let navItems = [UIBarButtonItem(systemItem: .compose , menu: menu)]
+        let menu = UIMenu(title: "Sort by price USD", options: .displayInline, children: [ascendingSort , descendingSort])
+        let navItems = [UIBarButtonItem(title: "Sort", image: nil, menu: menu)]
         self.navigationItem.rightBarButtonItems = navItems
+    }
+    
+    @objc func logoutButtonTapped() {
+        presenter?.logoutButtonTapped()
     }
 
     // MARK: - Properties
@@ -114,7 +120,7 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - UI Setup
 extension CoinsViewController {
     func setupUI() {
-        overrideUserInterfaceStyle = .light
+//        overrideUserInterfaceStyle = .light
         self.view.addSubview(tableView)
         self.view.addSubview(activityIndicator)
         
