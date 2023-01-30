@@ -31,6 +31,7 @@
 		BA3A6DEB297ED23000424994 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DEA297ED23000424994 /* TableViewCell.swift */; };
 		BA42704D2983DCCE00CD5401 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA42704C2983DCCE00CD5401 /* NetworkService.swift */; };
 		BA42704F2983DEB700CD5401 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */; };
+		BA4270882987D9A000CD5401 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4270872987D9A000CD5401 /* TableHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		BA3A6DEA297ED23000424994 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BA42704C2983DCCE00CD5401 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		BA4270872987D9A000CD5401 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3A6DD6297ED12500424994 /* CoinsViewController.swift */,
+				BA4270872987D9A000CD5401 /* TableHeader.swift */,
 				BA3A6DD8297ED12D00424994 /* CoinsProtocols.swift */,
 				BA3A6DDA297ED13500424994 /* CoinsPresenter.swift */,
 				BA3A6DDC297ED13E00424994 /* CoinsInteractor.swift */,
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4270882987D9A000CD5401 /* TableHeader.swift in Sources */,
 				BA42704F2983DEB700CD5401 /* NetworkDataFetcher.swift in Sources */,
 				BA3A6DD1297ED0C300424994 /* AuthPresenter.swift in Sources */,
 				BA3A6DE3297ED1B400424994 /* CoinProtocols.swift in Sources */,

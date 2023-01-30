@@ -43,11 +43,12 @@ class CoinsViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "TableHeader")
         return tableView
     }()
     
@@ -92,13 +93,13 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.nameLabel.text = coin.symbol
         
         if let price = coin.marketData!.priceUsd {
-            cell.priceLabel.text = String(price)
+            cell.priceLabel.text = String(format: "%.3f", price)
         } else {
             cell.priceLabel.text = "No data"
         }
         
         if let change = coin.marketData!.percentChangeUsdLast1_Hour {
-            cell.changeLabel.text = String(change)
+            cell.changeLabel.text = String(format: "%.3f", change)
         } else {
             cell.changeLabel.text = "No data"
         }
@@ -109,6 +110,11 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectRowAt(index: indexPath.row)
         presenter?.deselectRowAt(index: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader")
+        return header
     }
 }
 
