@@ -73,7 +73,7 @@ extension CoinsPresenter: InteractorToPresenterCoinsProtocol {
     }
     
     func getCoinFailure() {
-        print("Couldn't retrieve quote by index")
+        print("Couldn't retrieve coin by index")
     }
     
     func didLogoutButtonTapped() {
