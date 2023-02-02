@@ -46,18 +46,8 @@ extension CoinDetailViewController: PresenterToViewCoinDetailProtocol {
   
     func onGetCoinSuccess(for coin: CoinData) {
         nameLabel.text = coin.symbol
-        
-        if let price = coin.marketData!.priceUsd {
-            priceLabel.text = String(format: "%.3f", price)
-        } else {
-            priceLabel.text = "No data"
-        }
-        
-        if let change = coin.marketData!.percentChangeUsdLast1_Hour {
-            changeLabel.text = String(format: "%.3f", change)
-        } else {
-            changeLabel.text = "No data"
-        }
+        priceLabel.text = coin.checkData(from: coin.marketData!.priceUsd)
+        changeLabel.text = coin.checkData(from: coin.marketData!.percentChangeUsdLast1_Hour)
     }
     
     func onGetCoinFailure() {

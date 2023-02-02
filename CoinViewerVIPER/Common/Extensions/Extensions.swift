@@ -18,3 +18,15 @@ extension UILabel {
             return label
     }
 }
+
+extension CoinData {
+    func checkData(from data: Double?) -> String {
+        if let checkedData = data {
+            return String(format: "%.3f", checkedData)
+        } else {
+            return "No data"
+        }
+    }
+}
+
+
