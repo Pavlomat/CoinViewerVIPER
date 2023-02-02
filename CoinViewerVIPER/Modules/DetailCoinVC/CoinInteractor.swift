@@ -18,7 +18,7 @@ class CoinDetailInteractor: PresenterToInteractorCoinDetailProtocol {
     }
     
     func logoutButtonTapped() {
-        SceneDelegate().defaults.set(false, forKey: "UserLogged")
+        Prefs.shared.boolForLogin = false
         presenter?.didLogoutButtonTapped()
     }
 

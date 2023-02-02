@@ -10,7 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let defaults = UserDefaults.standard
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
@@ -25,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.windowScene = windowScene
         window.makeKeyAndVisible()
         
-        if defaults.bool(forKey: "UserLogged") == true {
+        if Prefs.shared.boolForLogin == true {
             window.rootViewController = CoinsRouter.createModule()
         } else {
             window.rootViewController = AuthRouter.createModule()

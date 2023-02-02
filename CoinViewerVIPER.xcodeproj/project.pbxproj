@@ -32,6 +32,7 @@
 		BA42704D2983DCCE00CD5401 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA42704C2983DCCE00CD5401 /* NetworkService.swift */; };
 		BA42704F2983DEB700CD5401 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */; };
 		BA4270882987D9A000CD5401 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4270872987D9A000CD5401 /* TableHeader.swift */; };
+		BA42708A298BF8DC00CD5401 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA427089298BF8DC00CD5401 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		BA42704C2983DCCE00CD5401 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		BA4270872987D9A000CD5401 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
+		BA427089298BF8DC00CD5401 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		BA3A6DC0297ECFE800424994 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BA427089298BF8DC00CD5401 /* UserDefaults.swift */,
 				BA42704C2983DCCE00CD5401 /* NetworkService.swift */,
 				BA42704E2983DEB700CD5401 /* NetworkDataFetcher.swift */,
 			);
@@ -286,6 +289,7 @@
 				BA3A6DCD297ED0B300424994 /* AuthViewController.swift in Sources */,
 				BA3A6DE5297ED1BC00424994 /* CoinPresenter.swift in Sources */,
 				BA3A6DCF297ED0BC00424994 /* AuthProtocols.swift in Sources */,
+				BA42708A298BF8DC00CD5401 /* UserDefaults.swift in Sources */,
 				BA3A6DE9297ED1D300424994 /* CoinRouter.swift in Sources */,
 				BA3A6DE7297ED1C900424994 /* CoinInteractor.swift in Sources */,
 				BA3A6DC6297ED03300424994 /* Extensions.swift in Sources */,
