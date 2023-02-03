@@ -21,12 +21,18 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
         urlStrings.map { urlString in
             group.enter()
             NetworkDataFetcher.shared.fetchCoins(urlString: urlString) { [weak self] (searchResponse) in
+                defer {
+                    group.leave()
+                }
                 guard let searchResponce = searchResponse else { return }
                 guard let oneCoin = searchResponce.data else { return }
                 self?.coins.append(oneCoin)
-                self?.presenter?.fetchCoinsSuccess(coins: self!.coins)
-                group.leave()
             }
+        }
+        
+        group.notify(queue: .main) {
+            print("Done")
+            self.presenter?.fetchCoinsSuccess(coins: self.coins)
         }
     }
     
