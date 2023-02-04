@@ -31,7 +31,6 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
         }
         
         group.notify(queue: .main) {
-            print("Done")
             self.presenter?.fetchCoinsSuccess(coins: self.coins)
         }
     }
