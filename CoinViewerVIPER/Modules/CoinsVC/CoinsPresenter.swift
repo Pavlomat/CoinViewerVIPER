@@ -69,7 +69,10 @@ extension CoinsPresenter: InteractorToPresenterCoinsProtocol {
     }
     
     func getCoinSuccess(_ coin: CoinData) {
-            router?.pushToCoinDetail(on: view!, with: coin)
+        guard let view = view else {
+            return
+        }
+            router?.pushToCoinDetail(on: view, with: coin)
     }
     
     func getCoinFailure() {

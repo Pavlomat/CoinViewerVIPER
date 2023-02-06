@@ -15,7 +15,7 @@ class CoinDetailPresenter: ViewToPresenterCoinDetailProtocol {
     var router: PresenterToRouterCoinDetailProtocol?
     
     func viewDidLoad() {
-        interactor?.getImageDataFromURL()
+        interactor?.getCoinData()
     }
     
     func logoutButtonTapped() {

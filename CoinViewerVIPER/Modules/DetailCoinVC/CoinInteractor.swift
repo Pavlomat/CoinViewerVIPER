@@ -13,8 +13,11 @@ class CoinDetailInteractor: PresenterToInteractorCoinDetailProtocol {
     weak var presenter: InteractorToPresenterCoinDetailProtocol?
     var coin: CoinData?
     
-    func getImageDataFromURL() {
-        presenter?.getTappedCoinSuccess(coin: self.coin!)
+    func getCoinData() {
+        guard let coin = coin else {
+            return
+        }
+        presenter?.getTappedCoinSuccess(coin: coin)
     }
     
     func logoutButtonTapped() {

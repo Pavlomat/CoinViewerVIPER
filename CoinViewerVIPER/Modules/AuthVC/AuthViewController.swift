@@ -18,7 +18,13 @@ class AuthViewController: UIViewController {
     
     // MARK: - Actions
     @objc func authorizationButtonTapped() {
-            presenter?.authButtonTapped(login: loginTextField.text!, password: passwordTextField.text!)
+        guard
+            let loginText = loginTextField.text,
+            let passwordText = passwordTextField.text
+        else {
+            return
+        }
+            presenter?.authButtonTapped(login: loginText, password: passwordText)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -30,7 +30,7 @@ protocol PresenterToInteractorCoinDetailProtocol: AnyObject {
     var presenter: InteractorToPresenterCoinDetailProtocol? { get set }
     var coin: CoinData? { get set }
     
-    func getImageDataFromURL()
+    func getCoinData()
     func logoutButtonTapped()
 }
 
