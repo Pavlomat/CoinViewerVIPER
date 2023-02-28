@@ -24,8 +24,7 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
                 defer {
                     group.leave()
                 }
-                guard let searchResponce = searchResponse else { return }
-                guard let oneCoin = searchResponce.data else { return }
+                guard let oneCoin = searchResponse?.data else { return }
                 self?.coins.append(oneCoin)
             }
         }

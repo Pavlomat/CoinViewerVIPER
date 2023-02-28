@@ -47,6 +47,18 @@ class TableViewCell: UITableViewCell {
             stackView.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
         ])
     }
+    
+    var model: CoinData? {
+        didSet {
+            guard let model = model else {
+                return
+            }
+            
+            self.nameLabel.text = model.symbol
+            self.priceLabel.text = model.checkData(from: model.marketData!.priceUsd)
+            self.changeLabel.text = model.checkData(from: model.marketData!.percentChangeUsdLast1_Hour)
+        }
+    }
 }
 
 

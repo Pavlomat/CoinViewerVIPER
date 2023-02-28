@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA2DAF1F29ADF486006A4B2B /* URLAdress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DAF1E29ADF486006A4B2B /* URLAdress.swift */; };
 		BA3A6DAA297ECEFF00424994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DA9297ECEFF00424994 /* AppDelegate.swift */; };
 		BA3A6DAC297ECEFF00424994 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A6DAB297ECEFF00424994 /* SceneDelegate.swift */; };
 		BA3A6DB3297ECF0000424994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3A6DB2297ECF0000424994 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA2DAF1E29ADF486006A4B2B /* URLAdress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLAdress.swift; sourceTree = "<group>"; };
 		BA3A6DA6297ECEFF00424994 /* CoinViewerVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinViewerVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3A6DA9297ECEFF00424994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA3A6DAB297ECEFF00424994 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3A6DC7297ED04D00424994 /* Coin.swift */,
+				BA2DAF1E29ADF486006A4B2B /* URLAdress.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				BA3A6DCF297ED0BC00424994 /* AuthProtocols.swift in Sources */,
 				BA42708A298BF8DC00CD5401 /* UserDefaults.swift in Sources */,
 				BA3A6DE9297ED1D300424994 /* CoinRouter.swift in Sources */,
+				BA2DAF1F29ADF486006A4B2B /* URLAdress.swift in Sources */,
 				BA3A6DE7297ED1C900424994 /* CoinInteractor.swift in Sources */,
 				BA3A6DC6297ED03300424994 /* Extensions.swift in Sources */,
 			);

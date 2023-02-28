@@ -86,13 +86,12 @@ extension CoinsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell else {
-            fatalError()
+            return UITableViewCell()
         }
+        
         guard let coin = presenter?.textLabelText(indexPath: indexPath) else { return cell }
         
-        cell.nameLabel.text = coin.symbol
-        cell.priceLabel.text = coin.checkData(from: coin.marketData!.priceUsd)
-        cell.changeLabel.text = coin.checkData(from: coin.marketData!.percentChangeUsdLast1_Hour)
+        cell.model = coin
 
         return cell
     }
