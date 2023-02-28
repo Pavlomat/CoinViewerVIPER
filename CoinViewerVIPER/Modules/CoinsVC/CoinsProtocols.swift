@@ -38,6 +38,7 @@ protocol PresenterToInteractorCoinsProtocol: AnyObject {
     
     var presenter: InteractorToPresenterCoinsProtocol? { get set }
     func loadCoins()
+    func oneGroupTask(for url: URL, group: DispatchGroup)
     func retrieveCoin(at index: Int)
     func sortTableViewAscending()
     func sortTableViewDescending()

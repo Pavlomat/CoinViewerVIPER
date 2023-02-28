@@ -10,27 +10,29 @@ import Foundation
 class CoinsInteractor: PresenterToInteractorCoinsProtocol {
     
     // MARK: Properties
-    let urlStrings = ["https://data.messari.io/api/v1/assets/btc/metrics", "https://data.messari.io/api/v1/assets/eth/metrics", "https://data.messari.io/api/v1/assets/tron/metrics", "https://data.messari.io/api/v1/assets/luna/metrics", "https://data.messari.io/api/v1/assets/polcadot/metrics", "https://data.messari.io/api/v1/assets/dogecoin/metrics", "https://data.messari.io/api/v1/assets/tether/metrics", "https://data.messari.io/api/v1/assets/stellar/metrics", "https://data.messari.io/api/v1/assets/cardano/metrics", "https://data.messari.io/api/v1/assets/xrp/metrics"]
-    
     weak var presenter: InteractorToPresenterCoinsProtocol?
     var coins = [CoinData]()
     
     func loadCoins() {
         let group = DispatchGroup()
         
-        urlStrings.map { urlString in
-            group.enter()
-            NetworkDataFetcher.shared.fetchCoins(urlString: urlString) { [weak self] (searchResponse) in
-                defer {
-                    group.leave()
-                }
-                guard let oneCoin = searchResponse?.data else { return }
-                self?.coins.append(oneCoin)
-            }
+        URLAdress.allCases.forEach {
+            oneGroupTask(for: $0.url, group: group)
         }
         
         group.notify(queue: .main) {
             self.presenter?.fetchCoinsSuccess(coins: self.coins)
+        }
+    }
+    
+    func oneGroupTask(for url: URL, group: DispatchGroup) {
+        group.enter()
+        NetworkDataFetcher.shared.fetchCoins(url: url) { [weak self] (searchResponse) in
+            defer {
+                group.leave()
+            }
+            guard let oneCoin = searchResponse?.data else { return }
+            self?.coins.append(oneCoin)
         }
     }
     

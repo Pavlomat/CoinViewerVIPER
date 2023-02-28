@@ -13,8 +13,8 @@ class NetworkDataFetcher {
     static let shared = NetworkDataFetcher()
     let networkService = NetworkService()
     
-    func fetchCoins(urlString: String, response: @escaping (Coin?) -> ()) {
-        networkService.request(urlString: urlString) { (result) in
+    func fetchCoins(url: URL, response: @escaping (Coin?) -> ()) {
+        networkService.request(url: url) { (result) in
             switch result {
             case .success(let data):
                 do {

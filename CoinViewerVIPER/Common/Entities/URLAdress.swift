@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum URLAdress {
+enum URLAdress: CaseIterable {
     
     private var baseURL: String {
         return "https://data.messari.io/api/v1/assets"
