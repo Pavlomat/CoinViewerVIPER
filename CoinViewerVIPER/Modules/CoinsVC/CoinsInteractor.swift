@@ -17,22 +17,18 @@ class CoinsInteractor: PresenterToInteractorCoinsProtocol {
         let group = DispatchGroup()
         
         URLAdress.allCases.forEach {
-            oneGroupTask(for: $0.url, group: group)
+            group.enter()
+            NetworkDataFetcher.shared.fetchCoins(url: $0.url) { [weak self] (searchResponse) in
+                defer {
+                    group.leave()
+                }
+                guard let oneCoin = searchResponse?.data else { return }
+                self?.coins.append(oneCoin)
+            }
         }
         
         group.notify(queue: .main) {
             self.presenter?.fetchCoinsSuccess(coins: self.coins)
-        }
-    }
-    
-    func oneGroupTask(for url: URL, group: DispatchGroup) {
-        group.enter()
-        NetworkDataFetcher.shared.fetchCoins(url: url) { [weak self] (searchResponse) in
-            defer {
-                group.leave()
-            }
-            guard let oneCoin = searchResponse?.data else { return }
-            self?.coins.append(oneCoin)
         }
     }
     
